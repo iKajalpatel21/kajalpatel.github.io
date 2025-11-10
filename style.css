@@ -1,0 +1,274 @@
+/*
+ * Global styles for Kajal Patel's portfolio.
+ *
+ * A restrained colour palette and generous spacing keep the site feeling calm
+ * and professional. Cards lift on hover to provide subtle interactivity.
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #d1d5db; /* light grey */
+  background-color: #0c121c; /* dark navy */
+}
+
+a {
+  color: #3b82f6; /* blue link */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2563eb;
+}
+
+/* Hero section */
+#hero {
+  position: relative;
+  background-image: url('hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f9fafb; /* near white */
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay for text legibility */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar .logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #f9fafb;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar li a {
+  color: #f9fafb;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #e5e7eb;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  border: 1px solid #3b82f6;
+  background: transparent;
+  color: #3b82f6;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #3b82f6;
+  color: #f9fafb;
+  border-color: #3b82f6;
+}
+
+.btn:hover {
+  background: #2563eb;
+  color: #f9fafb;
+  border-color: #2563eb;
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f3f4f6;
+}
+
+/* Project and blog lists */
+.project-list,
+.blog-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-card,
+.blog-card {
+  background: #152238; /* dark card */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3,
+.blog-card h3 {
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.project-card p,
+.blog-card p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.project-card a,
+.blog-card a {
+  font-weight: 600;
+}
+
+/* Timeline styling */
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-item {
+  margin-bottom: 1.75rem;
+}
+
+.experience-item h3 {
+  color: #3b82f6;
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+}
+
+.experience-item .date {
+  display: block;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.experience-item p {
+  font-size: 0.95rem;
+}
+
+/* Activities and education lists */
+#activities ul,
+#education ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#activities li,
+#education li {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+#activities li strong,
+#education li strong {
+  color: #3b82f6;
+}
+
+/* Contact list */
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  background: #0d1117;
+  color: #6b7280;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* Responsive grid adjustments */
+@media (min-width: 640px) {
+  .project-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .blog-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .blog-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .hero-content h1 {
+    font-size: 3.2rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
